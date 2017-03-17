@@ -1,0 +1,14 @@
+<% if spree_user_signed_in? %>
+  <li id="login-bar">
+    <%= link_to Spree.t(:logout), spree_logout_path %>
+  </li>
+<% else %>
+  <li id="login-bar">
+    <%= link_to"Login / Sign Up", spree_login_path %>
+    <%= hidden_field_tag 'authenticity_token', form_authenticity_token %>
+
+  </li>
+  <!-- <li>
+    <%#= link_to Spree.t(:signup), spree_signup_path %>
+  </li> -->
+<% end %>
