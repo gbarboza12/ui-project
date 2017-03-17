@@ -5,7 +5,7 @@ require 'rails/all'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
-config.assets.initialize_on_precompile = false
+
 
 module Store
   class Application < Rails::Application
@@ -14,6 +14,7 @@ module Store
       # Load application's model / class decorators
       Dir.glob(File.join(File.dirname(__FILE__), "../app/**/*_decorator*.rb")) do |c|
         Rails.configuration.cache_classes ? require(c) : load(c)
+        config.assets.initialize_on_precompile = false
       end
 
       # Load application's view overrides
