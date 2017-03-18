@@ -3,7 +3,7 @@
    <%= t(:sort_by) %>
    <ul class="list-inline">
    <li><%= link_to_unless current_sorting?(:ascend_by_updated_at), t(:newest),  safe_params.merge(sorting: :ascend_by_updated_at) %></li>
-   <li><%= link_to_unless current_sorting?(:ascend_by_master_price), t(:lowest_price), safe_params.merge(sorting: :ascend_by_master_price) %></li>
+   <li><%= link_to_unless current_sorting?(:ascend_by_master_price), t(:lowest_price), safe_params.merge(sorting: :ascend_by_master_price.values[:order]) %></li>
    <li><%= link_to_unless current_sorting?(:descend_by_master_price), t(:highest_price), safe_params.merge(sorting: :descend_by_master_price) %></li>
  </ul>
 </div></div>
