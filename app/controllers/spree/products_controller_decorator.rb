@@ -8,9 +8,9 @@ module Spree
       @products = @products.send(sorting_scope)
     end
 
-    def sorting_param
-      safe_params[:sorting].try(:to_sym) || default_sorting
-    end
+   #  def sorting_param
+   #    safe_params[:sorting].try(:to_sym) || default_sorting
+   #  end
 
     private
 

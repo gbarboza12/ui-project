@@ -1,6 +1,7 @@
+include ApplicationHelper
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  include ApplicationHelper
+
   helper_method :safe_params
   helper_method :sorting_param
   protected
@@ -10,5 +11,8 @@ class ApplicationController < ActionController::Base
       params.except(:host, :port, :protocol).permit!
     end
 
+    def sorting_param
+      safe_params[:sorting].try(:to_sym) || default_sorting
+    end
 
 end
