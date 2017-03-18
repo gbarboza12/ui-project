@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     end
 
     def sorting_param
-      safe_params[:sorting].try(:to_sym) || default_sorting
+      safe_params[:sorting].try(:to_sym) || :ascend_by_updated_at
     end
 
 end
