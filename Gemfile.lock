@@ -348,14 +348,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  aws-sdk (~> 2.3)
+  aws-sdk
   byebug
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
   nokogiri (= 1.6.1)
-  paperclip
   pg
   puma (~> 3.0)
   rails (~> 5.0.2)
