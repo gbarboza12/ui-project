@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery 
+  protect_from_forgery
   include ApplicationHelper
   helper_method :safe_params
+  helper_method :sorting_param
   protected
     # Use this in place of params when generating links to Excel etc.
     # See https://github.com/rails/rails/issues/26289
