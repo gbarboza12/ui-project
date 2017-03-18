@@ -7,6 +7,9 @@
 #       Just removing an entry from this initializer will not make the preference value go away.
 #       Instead you must either set a new value or remove entry, clear cache, and remove database entry.
 #
+
+
+require 'spree/product_filters'
 # In order to initialize a setting do:
 # config.setting_name = 'new value'
 Spree.config do |config|
@@ -16,6 +19,7 @@ Spree.config do |config|
 end
 
 Spree.user_class = "Spree::LegacyUser"
+
 
 
 attachment_config = {

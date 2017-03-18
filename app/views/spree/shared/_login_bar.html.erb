@@ -1,14 +1,13 @@
-<% if spree_user_signed_in? %>
-  <li id="login-bar">
-    <%= link_to Spree.t(:logout), spree_logout_path %>
-  </li>
+<% if try_spree_current_user.try(:has_spree_role?, 'admin') %>
+  <li id='admin-link' data-hook><%= link_to 'Admin', spree.admin_path %></li>
+<% end %>
+
+<% if spree_current_user %>
+  <li id="my-account"><%= link_to Spree.t(:my_account), spree.account_path %></li>
+  <li id="login-bar"><%= link_to Spree.t(:logout), spree_logout_path %> </li>
 <% else %>
   <li id="login-bar">
     <%= link_to"Login / Sign Up", spree_login_path %>
     <%= hidden_field_tag 'authenticity_token', form_authenticity_token %>
-
   </li>
-  <!-- <li>
-    <%#= link_to Spree.t(:signup), spree_signup_path %>
-  </li> -->
 <% end %>
