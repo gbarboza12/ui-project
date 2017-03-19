@@ -1,3 +1,4 @@
+
 <% if try_spree_current_user.try(:has_spree_role?, 'admin') %>
   <li id='admin-link' data-hook><%= link_to 'Admin', spree.admin_path %></li>
 <% end %>
@@ -6,8 +7,10 @@
   <li id="my-account"><%= link_to Spree.t(:my_account), spree.account_path %></li>
   <li id="login-bar"><%= link_to Spree.t(:logout), spree_logout_path %> </li>
 <% else %>
+<div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
   <li id="login-bar">
-    <%= link_to"Login / Sign Up", spree_login_path %>
+    <%= link_to"Login / Sign Up", spree_login_path, data: {toggle: "modal", target: "#modal-window"} %>
     <%= hidden_field_tag 'authenticity_token', form_authenticity_token %>
   </li>
 <% end %>
+</div>
