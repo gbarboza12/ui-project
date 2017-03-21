@@ -3,7 +3,8 @@
 <% end %>
 
 <% if spree_current_user %>
-  <li id="my-account"><%= link_to Spree.t(:my_account), spree.account_path %></li>
+  <li id="my-account" data-hook><%= link_to '<i class="glyphicon glyphicon-user"></i><br>My Account'.html_safe, spree.account_path %>
+
   <li id="login-bar"><%= link_to Spree.t(:logout), spree_logout_path %> </li>
 <% else %>
   <li id="login-bar">

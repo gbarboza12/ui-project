@@ -1,0 +1,19 @@
+<nav class="navbar col-md-8 col-sm-9" id="top-nav-bar">
+   <ul id="nav-bar" class="nav navbar-nav navbar-right" data-hook>
+      <li> <a href='/help'><span class="glyphicon glyphicon-question-sign"></span><br>Help</a></li>
+      <% if try_spree_current_user.try(:has_spree_role?, 'admin') %>
+        <li id='admin-link' data-hook><%= link_to '<i class="glyphicon glyphicon-text-background"></i><br>Admin Panel'.html_safe, spree.admin_path %></li>
+      <% end %>
+
+      <% if spree_current_user %>
+        <li id="my-account" data-hook><%= link_to '<i class="glyphicon glyphicon-user"></i><br>My Account'.html_safe, spree.account_path %>
+        <li id="login-bar"><%= link_to '<i class="glyphicon glyphicon-log-out"></i><br>Logout'.html_safe, spree_logout_path %> </li>
+      <% else %>
+        <li id="login-bar">
+          <%= link_to'<i class="glyphicon glyphicon-log-in"></i><br>Login / Sign Up'.html_safe, spree_login_path %>
+          <%= hidden_field_tag 'authenticity_token', form_authenticity_token %>
+        </li>
+      <% end %>
+</ul>
+<%= render partial: 'spree/shared/search' %>
+</nav>
