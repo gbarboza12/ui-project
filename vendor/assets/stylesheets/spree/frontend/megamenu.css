@@ -41,11 +41,11 @@
 .skyblue,.skyblue>li.showhide{
 	   width: 72%;
   float: left;
-  margin-right: 2%;;
+  margin-right: 2%;
 }
 
 .skyblue li>a,.skyblue>li.showhide span{color:#204056}
-.skyblue>li:hover>a,.skyblue .dropdown li:hover>a{color:#555; background:#ffffff;}.
+.skyblue>li:hover>a,.skyblue .dropdown li:hover>a{color:#555; background:#ffffff;}
 .skyblue .megapanel img:hover,.skyblue form.contact input[type="text"]:focus,.skyblue form.contact textarea:focus{}
 .skyblue form.contact input[type="submit"]{background:#00405d;text-transform:uppercase;}
 
@@ -195,5 +195,4 @@ ul.megamenu.skyblue {
 }
 .megamenu>li.showhide span.icon1:after {
   top: 9px;
-}
 }
